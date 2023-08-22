@@ -28,6 +28,8 @@ def find_max_sequence(list):
         if len(max_sequence) <= len(sequence): 
             max_sequence = sequence.copy()
         list_number.pop(index)
+    if len(max_sequence) < 2:
+        return "в списке нет последовательности чисел"
     return [max_sequence[0], max_sequence[-1]]
 
 
