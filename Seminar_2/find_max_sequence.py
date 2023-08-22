@@ -25,7 +25,7 @@ def find_max_sequence(list):
         sequence = [list_number[index]]
         while sequence[-1]+1 in list_number:
             sequence.append(sequence[-1]+1)
-        if len(max_sequence) < len(sequence): 
+        if len(max_sequence) <= len(sequence): 
             max_sequence = sequence.copy()
         list_number.pop(index)
     return [max_sequence[0], max_sequence[-1]]

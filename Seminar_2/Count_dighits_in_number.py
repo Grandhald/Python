@@ -17,6 +17,7 @@ def protect_input(message):
     except:
         return protect_input("Вы ввели не число. Повторите попытку: ")
 
+
 def count_dighits_in_num(number):
     count = 1
     while number % 10 != int(number % 10):

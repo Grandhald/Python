@@ -8,9 +8,6 @@ def protect_input(message):
     return protect_input("Ввели не число. Повторите попытку: ")
 
 
-
-
-
 number, power= protect_input("Введите число: "), 0
 
 print(f"Все целые степени двойки до числа не превосходящие число {number}: ")
