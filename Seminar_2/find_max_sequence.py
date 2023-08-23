@@ -21,13 +21,13 @@ def find_max_sequence(list):
     max_sequence = []
     print(f"{sorted(set(list_number))} - отсортированная последовательность с удалением повторяющихся элементов")
     while len(list_number) > 0:
-        index = list_number.index(min(list_number))
-        sequence = [list_number[index]]
+        min_index = list_number.index(min(list_number))
+        sequence = [list_number[min_index]]
         while sequence[-1]+1 in list_number:
             sequence.append(sequence[-1]+1)
         if len(max_sequence) <= len(sequence): 
             max_sequence = sequence.copy()
-        list_number.pop(index)
+        list_number.pop(min_index)
     if len(max_sequence) < 2:
         return "в списке нет последовательности чисел"
     return [max_sequence[0], max_sequence[-1]]
