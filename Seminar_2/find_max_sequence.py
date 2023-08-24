@@ -18,20 +18,31 @@ import random
 
 def find_max_sequence(list):
     list_number = list.copy()
-    max_sequence = []
+    max_sequence, sequence = [], []
     print(f"{sorted(set(list_number))} - отсортированная последовательность с удалением повторяющихся элементов")
-    while len(list_number) > 0:
-        min_index = list_number.index(min(list_number))
-        sequence = [list_number[min_index]]
-        while sequence[-1]+1 in list_number:
-            sequence.append(sequence[-1]+1)
-        if len(max_sequence) <= len(sequence): 
-            max_sequence = sequence.copy()
-        list_number.pop(min_index)
-    if len(max_sequence) < 2:
-        return "в списке нет последовательности чисел"
+    # while len(list_number) > 0:
+    #     min_index = list_number.index(min(list_number))
+    #     sequence = [list_number[min_index]]
+    #     while sequence[-1]+1 in list_number:
+    #         sequence.append(sequence[-1]+1)
+    #     if len(max_sequence) <= len(sequence): 
+    #         max_sequence = sequence.copy()
+    #     list_number.pop(min_index)
+    # if len(max_sequence) < 2:
+    #     return "в списке нет последовательности чисел"
+    # return [max_sequence[0], max_sequence[-1]]
+    min_element, max_element = min(list_number), max(list_number)
+    for elem in range(min_element, max_element+1):
+        if elem in list_number:
+            sequence.append(elem)
+            if len(max_sequence) <= len(sequence):
+                max_sequence = sequence.copy()
+        else:
+            sequence.clear()
     return [max_sequence[0], max_sequence[-1]]
-
+            
+            
+    
 
 
 for i in range(100):
