@@ -39,6 +39,8 @@ def find_max_sequence(list):
                 max_sequence = sequence.copy()
         else:
             sequence.clear()
+    if len(max_sequence) < 2:
+        return "в списке нет последовательности чисел"
     return [max_sequence[0], max_sequence[-1]]
             
             
