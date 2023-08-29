@@ -14,11 +14,12 @@ import random
 # Дальше решаем квадратное уравнение в функции find_hundders_numbers
 
 def protect_input(message):
-    print(message)
-    num = input()
-    if num.isdigit():
-        return int(num)
-    return protect_input("Ввели не число. Повторите попытку: ")
+    try:
+        print(message)
+        num = int(input())
+        return num
+    except:
+        return protect_input("Ввели не число. Повторите попытку: ")
 
 
 def find_hundders_numbers(sum, product):
