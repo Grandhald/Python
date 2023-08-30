@@ -33,7 +33,7 @@ print(*list_coins)
 print(f"Минимальное кол-во монет которых нужно перевернуть для, чтобы монеты лежали вверх одной стороной -->> {find_min_flip_coins(list_coins)}")
 
 
-# if list_coins.count("Герб") > list_coins.count("Решка"):
-#     print(list_coins.count("Решка"))
-# else: 
-#     print(list_coins.count("Герб"))
+if list_coins.count("Герб") > list_coins.count("Решка"):
+    print(list_coins.count("Решка"))
+else: 
+    print(list_coins.count("Герб"))
