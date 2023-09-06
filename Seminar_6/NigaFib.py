@@ -10,17 +10,20 @@
 
 def fib(n):
     num_fib = [1, 0, 1]
+    
     if n <= 2:
         if n == 2:
             return num_fib
         elif n == 1:
             return [0]
         else: 
-            return[]      
+            return[]  
+            
     for i in range(n-1):
         pow = (-1)**(i+1)
         num_fib.append(num_fib[-1]+ num_fib[-2])
         num_fib = [num_fib[-1]*pow] + num_fib
+        
     return num_fib
 
 
