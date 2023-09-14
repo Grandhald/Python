@@ -14,18 +14,16 @@
 def count_vowels(array):
     vowels_in_ACII = "аиыеуюяёо"
     count = 0
-    for word in array:
-        for letters in word:
-            if letters in vowels_in_ACII:
-                count += 1
+    for letters in array:
+         if letters in vowels_in_ACII:
+            count += 1
     return count
         
 
 def find_rhythm(message):
     list_phrase = message.lower().split()
-    list_syllable = [item.split("-") for item in list_phrase]
-    cou_vow_phrase = count_vowels(list_syllable[0])
-    for phrase in list_syllable:
+    cou_vow_phrase = count_vowels(list_phrase[0])
+    for phrase in list_phrase:
         if count_vowels(phrase) != cou_vow_phrase:
             return "Пам парам"
     return "Парам пам-пам"
